@@ -11,22 +11,39 @@ class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       // buildGameUI()
-        let v = ViewWithDiagonalLine()
-           v.frame = CGRect(x: 28, y: 150, width: view.frame.size.width - 55, height: view.frame.size.height - 300)
-            v.layer.borderColor = UIColor.blue.cgColor
-           v.layer.borderWidth = 4
-           view.addSubview(v)
+        buildGameUI()
+//        let v = ViewWithDiagonalLine()
+//           v.frame = CGRect(x: 28, y: 150, width: view.frame.size.width - 55, height: view.frame.size.height - 300)
+//            v.layer.borderColor = UIColor.black.cgColor
+//           v.layer.borderWidth = 4
+//           view.addSubview(v)
+//
+//        let TL = UIButton(type: .custom)
+//        TL.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+//        TL.center = CGPoint(x: v.bounds.minX, y: v.bounds.minY)
+//        TL.setTitle("TL", for: .normal)
+//        TL.setTitleColor(.black, for: .normal)
+//        TL.layer.cornerRadius = 0.5 * TL.bounds.size.width
+//        TL.clipsToBounds = true
+//        TL.backgroundColor = .black
+//        TL.addTarget(self, action: #selector(tlTapped), for: .touchUpInside)
+//        v.addSubview(TL)
        
     }
     
     func buildGameUI() {
-        let gameView = UIView()
+//        let gameView = UIView()
+//        gameView.frame = CGRect(x: 28, y: 150, width: view.frame.size.width - 55, height: view.frame.size.height - 300)
+//        gameView.backgroundColor = .systemTeal
+//        gameView.layer.borderWidth = 5
+//        gameView.layer.borderColor = UIColor.black.cgColor
+//        view.addSubview(gameView)
+        
+                let gameView = ViewWithDiagonalLine()
         gameView.frame = CGRect(x: 28, y: 150, width: view.frame.size.width - 55, height: view.frame.size.height - 300)
-        gameView.backgroundColor = .systemTeal
-        gameView.layer.borderWidth = 5
         gameView.layer.borderColor = UIColor.black.cgColor
-        view.addSubview(gameView)
+        gameView.layer.borderWidth = 4
+                   view.addSubview(gameView)
         
         
         

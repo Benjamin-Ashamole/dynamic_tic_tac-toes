@@ -10,10 +10,13 @@ import Foundation
 class Player {
     
     let name: String?
-    let pieces: [Piece]
+    let color: String?
+    var pieces: [Piece]
+    var isTurn: Bool = false
     
-    init(name: String) {
+    init(name: String, color: String) {
         self.name = name
+        self.color = color
         self.pieces = []
     }
 }

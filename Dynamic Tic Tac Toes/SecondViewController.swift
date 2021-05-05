@@ -8,38 +8,31 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    
+    private var gameArr: [String]! = []
+    private var count: Int = 0
+    
+    var TL: UIButton!
+    var BL: UIButton!
+    var ML: UIButton!
+    var MM: UIButton!
+    var BM: UIButton!
+    var TM: UIButton!
+    var TR: UIButton!
+    var MR: UIButton!
+    var BR: UIButton!
+    
+    var p1 = Player(name: "Player 1", color: "red")
+    var p2 = Player(name: "Player 2", color: "yellow")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         buildGameUI()
-//        let v = ViewWithDiagonalLine()
-//           v.frame = CGRect(x: 28, y: 150, width: view.frame.size.width - 55, height: view.frame.size.height - 300)
-//            v.layer.borderColor = UIColor.black.cgColor
-//           v.layer.borderWidth = 4
-//           view.addSubview(v)
-//
-//        let TL = UIButton(type: .custom)
-//        TL.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
-//        TL.center = CGPoint(x: v.bounds.minX, y: v.bounds.minY)
-//        TL.setTitle("TL", for: .normal)
-//        TL.setTitleColor(.black, for: .normal)
-//        TL.layer.cornerRadius = 0.5 * TL.bounds.size.width
-//        TL.clipsToBounds = true
-//        TL.backgroundColor = .black
-//        TL.addTarget(self, action: #selector(tlTapped), for: .touchUpInside)
-//        v.addSubview(TL)
-       
     }
     
     func buildGameUI() {
-//        let gameView = UIView()
-//        gameView.frame = CGRect(x: 28, y: 150, width: view.frame.size.width - 55, height: view.frame.size.height - 300)
-//        gameView.backgroundColor = .systemTeal
-//        gameView.layer.borderWidth = 5
-//        gameView.layer.borderColor = UIColor.black.cgColor
-//        view.addSubview(gameView)
         
-                let gameView = ViewWithDiagonalLine()
+        let gameView = ViewWithDiagonalLine()
         gameView.frame = CGRect(x: 28, y: 150, width: view.frame.size.width - 55, height: view.frame.size.height - 300)
         gameView.layer.borderColor = UIColor.black.cgColor
         gameView.layer.borderWidth = 4
@@ -48,7 +41,7 @@ class SecondViewController: UIViewController {
         
         
         
-        let TL = UIButton(type: .custom)
+        TL = UIButton(type: .custom)
         TL.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         TL.center = CGPoint(x: gameView.bounds.minX, y: gameView.bounds.minY)
         TL.setTitle("TL", for: .normal)
@@ -59,7 +52,7 @@ class SecondViewController: UIViewController {
         TL.addTarget(self, action: #selector(tlTapped), for: .touchUpInside)
         gameView.addSubview(TL)
         
-        let BL = UIButton(type: .custom)
+        BL = UIButton(type: .custom)
         BL.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         BL.center = CGPoint(x: gameView.bounds.minX, y: gameView.bounds.maxY)
         BL.setTitle("BL", for: .normal)
@@ -70,7 +63,7 @@ class SecondViewController: UIViewController {
         BL.addTarget(self, action: #selector(blTapped), for: .touchUpInside)
         gameView.addSubview(BL)
         
-        let ML = UIButton(type: .custom)
+        ML = UIButton(type: .custom)
         ML.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         ML.center = CGPoint(x: gameView.bounds.minX, y: gameView.bounds.midY)
         ML.setTitle("ML", for: .normal)
@@ -81,7 +74,7 @@ class SecondViewController: UIViewController {
         ML.addTarget(self, action: #selector(mlTapped), for: .touchUpInside)
         gameView.addSubview(ML)
         
-        let MM = UIButton(type: .custom)
+        MM = UIButton(type: .custom)
         MM.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         MM.center = CGPoint(x: gameView.bounds.midX, y: gameView.bounds.midY)
         MM.setTitle("MM", for: .normal)
@@ -92,7 +85,7 @@ class SecondViewController: UIViewController {
         MM.addTarget(self, action: #selector(mmTapped), for: .touchUpInside)
         gameView.addSubview(MM)
         
-        let BM = UIButton(type: .custom)
+        BM = UIButton(type: .custom)
         BM.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         BM.center = CGPoint(x: gameView.bounds.midX, y: gameView.bounds.maxY)
         BM.setTitle("BM", for: .normal)
@@ -103,7 +96,7 @@ class SecondViewController: UIViewController {
         BM.addTarget(self, action: #selector(bmTapped), for: .touchUpInside)
         gameView.addSubview(BM)
         
-        let TM = UIButton(type: .custom)
+        TM = UIButton(type: .custom)
         TM.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         TM.center = CGPoint(x: gameView.bounds.midX, y: gameView.bounds.minY)
         TM.setTitle("TM", for: .normal)
@@ -114,7 +107,7 @@ class SecondViewController: UIViewController {
         TM.addTarget(self, action: #selector(tmTapped), for: .touchUpInside)
         gameView.addSubview(TM)
         
-        let TR = UIButton(type: .custom)
+        TR = UIButton(type: .custom)
         TR.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         TR.center = CGPoint(x: gameView.bounds.maxX, y: gameView.bounds.minY)
         TR.setTitle("TR", for: .normal)
@@ -125,7 +118,7 @@ class SecondViewController: UIViewController {
         TR.addTarget(self, action: #selector(trTapped), for: .touchUpInside)
         gameView.addSubview(TR)
         
-        let MR = UIButton(type: .custom)
+        MR = UIButton(type: .custom)
         MR.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         MR.center = CGPoint(x: gameView.bounds.maxX, y: gameView.bounds.midY)
         MR.setTitle("MR", for: .normal)
@@ -136,7 +129,7 @@ class SecondViewController: UIViewController {
         MR.addTarget(self, action: #selector(mrTapped), for: .touchUpInside)
         gameView.addSubview(MR)
         
-        let BR = UIButton(type: .custom)
+        BR = UIButton(type: .custom)
         BR.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         BR.center = CGPoint(x: gameView.bounds.maxX, y: gameView.bounds.maxY)
         BR.setTitle("BR", for: .normal)
@@ -150,8 +143,10 @@ class SecondViewController: UIViewController {
     
     @objc func tlTapped(_ sender: UIButton) {
         if let buttonTitle = sender.title(for: .normal) {
-          print(buttonTitle)
+            print(buttonTitle)
+            makeMove(position: buttonTitle)
         }
+        
     }
     
     @objc func tmTapped(_ sender: UIButton) {
@@ -202,29 +197,78 @@ class SecondViewController: UIViewController {
           print(buttonTitle)
         }
     }
-}
-
-extension CALayer {
-
-    func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
-
-        let border = CALayer()
-
-        switch edge {
-        case .top:
-            border.frame = CGRect(x: 0, y: 0, width: frame.width, height: thickness)
-        case .bottom:
-            border.frame = CGRect(x: 0, y: frame.height - thickness, width: frame.width, height: thickness)
-        case .left:
-            border.frame = CGRect(x: 0, y: 0, width: thickness, height: frame.height)
-        case .right:
-            border.frame = CGRect(x: frame.width - thickness, y: 0, width: thickness, height: frame.height)
+    
+    private func updateUI(position: String) {
+        
+        // we should first check what player is making this play.
+        
+        
+        
+        switch position {
+        case "TL":
+            TL.backgroundColor = UIColor(named: p1.color!)
+            TL.setTitleColor(UIColor(named: p1.color!), for: .normal)
+        case "BL":
+            break
+        case "ML":
+            break
+        case "MM":
+            break
+        case "TM":
+            break
+        case "BM":
+            break
+        case "TR":
+            break
+        case "MR":
+            break
+        case "BR":
+            break
         default:
             break
         }
-
-        border.backgroundColor = color.cgColor;
-
-        addSublayer(border)
+        
+    }
+    
+    private func makeMove(position: String) {
+        
+        if (count != 6 && count % 2 == 0 && isPositionOpen(position: position)) {
+            let piece = Piece(currentPosition: position)
+            p1.pieces.append(piece)
+            updateUI(position: position)
+            count += 1
+            return
+        }
+        
+        if (count != 6 && count % 2 != 0 && isPositionOpen(position: position)) {
+            let piece = Piece(currentPosition: position)
+            p2.pieces.append(piece)
+            count += 1
+            return
+        }
+        
+        gameArr.append(position)
+        
+        if (gameArr.count == 2) {
+            print("Jappy")
+        }
+        
+        
+        
+    }
+    
+    private func isPositionOpen(position: String) -> Bool {
+        let combinedArr = p1.pieces + p2.pieces
+        if (combinedArr.count == 0) {
+            return true
+        } else {
+            for piece in combinedArr {
+                if (piece.currentPosition == position) {
+                    return false
+                }
+            }
+            return true
+        }
     }
 }
+

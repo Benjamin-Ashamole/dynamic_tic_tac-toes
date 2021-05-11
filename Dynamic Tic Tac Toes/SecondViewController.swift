@@ -11,6 +11,8 @@ class SecondViewController: UIViewController {
     
     private var gameArr: [String]! = []
     private var count: Int = 0
+    let allowedMoves = Rules().allowedMoves
+    
     
     var TL: UIButton!
     var BL: UIButton!
@@ -22,8 +24,9 @@ class SecondViewController: UIViewController {
     var MR: UIButton!
     var BR: UIButton!
     
-    var p1 = Player(name: "Player 1", color: "red")
-    var p2 = Player(name: "Player 2", color: "yellow")
+    var p1 = Player(name: "Player 1", color: .red, isTurn: true)
+    var p2 = Player(name: "Player 2", color: .yellow, isTurn: false)
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,9 @@ class SecondViewController: UIViewController {
     
     func buildGameUI() {
         
+        
+        TL = UIButton(type: .custom)
+        
         let gameView = ViewWithDiagonalLine()
         gameView.frame = CGRect(x: 28, y: 150, width: view.frame.size.width - 55, height: view.frame.size.height - 300)
         gameView.layer.borderColor = UIColor.black.cgColor
@@ -39,9 +45,6 @@ class SecondViewController: UIViewController {
                    view.addSubview(gameView)
         
         
-        
-        
-        TL = UIButton(type: .custom)
         TL.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         TL.center = CGPoint(x: gameView.bounds.minX, y: gameView.bounds.minY)
         TL.setTitle("TL", for: .normal)
@@ -51,6 +54,7 @@ class SecondViewController: UIViewController {
         TL.backgroundColor = .black
         TL.addTarget(self, action: #selector(tlTapped), for: .touchUpInside)
         gameView.addSubview(TL)
+        
         
         BL = UIButton(type: .custom)
         BL.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
@@ -141,101 +145,112 @@ class SecondViewController: UIViewController {
         gameView.addSubview(BR)
     }
     
+    func getCurrentPlayer() -> Player {
+        if (p1.isTurn == true) {
+            return p1
+        } else {
+            return p2
+        }
+    }
+    
     @objc func tlTapped(_ sender: UIButton) {
         if let buttonTitle = sender.title(for: .normal) {
-            print(buttonTitle)
-            makeMove(position: buttonTitle)
+            
+            makeMove(position: buttonTitle, player: getCurrentPlayer())
         }
         
     }
     
     @objc func tmTapped(_ sender: UIButton) {
         if let buttonTitle = sender.title(for: .normal) {
-          print(buttonTitle)
+            makeMove(position: buttonTitle, player: getCurrentPlayer())
         }
     }
     
     @objc func trTapped(_ sender: UIButton) {
         if let buttonTitle = sender.title(for: .normal) {
-          print(buttonTitle)
+            makeMove(position: buttonTitle, player: getCurrentPlayer())
         }
     }
     
     @objc func mlTapped(_ sender: UIButton) {
         if let buttonTitle = sender.title(for: .normal) {
-          print(buttonTitle)
+            makeMove(position: buttonTitle, player: getCurrentPlayer())
         }
     }
     
     @objc func mmTapped(_ sender: UIButton) {
         if let buttonTitle = sender.title(for: .normal) {
-          print(buttonTitle)
+            makeMove(position: buttonTitle, player: getCurrentPlayer())
         }
     }
     
     @objc func mrTapped(_ sender: UIButton) {
         if let buttonTitle = sender.title(for: .normal) {
-          print(buttonTitle)
+            makeMove(position: buttonTitle, player: getCurrentPlayer())
         }
     }
     
     @objc func blTapped(_ sender: UIButton) {
         if let buttonTitle = sender.title(for: .normal) {
-          print(buttonTitle)
+            makeMove(position: buttonTitle, player: getCurrentPlayer())
         }
     }
     
     @objc func bmTapped(_ sender: UIButton) {
         if let buttonTitle = sender.title(for: .normal) {
-          print(buttonTitle)
+            makeMove(position: buttonTitle, player: getCurrentPlayer())
         }
     }
     
     
     @objc func brTapped(_ sender: UIButton) {
         if let buttonTitle = sender.title(for: .normal) {
-          print(buttonTitle)
+            makeMove(position: buttonTitle, player: getCurrentPlayer())
         }
     }
     
-    private func updateUI(position: String) {
-        
-        // we should first check what player is making this play.
-        
-        
-        
+    private func updateUI(position: String, player: Player) {
         switch position {
         case "TL":
-            TL.backgroundColor = UIColor(named: p1.color!)
-            TL.setTitleColor(UIColor(named: p1.color!), for: .normal)
+            TL.backgroundColor = player.color
+            TL.setTitleColor(player.color, for: .normal)
         case "BL":
-            break
+            BL.backgroundColor = player.color
+            BL.setTitleColor(player.color, for: .normal)
         case "ML":
-            break
+            ML.backgroundColor = player.color
+            ML.setTitleColor(player.color, for: .normal)
         case "MM":
-            break
+            MM.backgroundColor = player.color
+            MM.setTitleColor(player.color, for: .normal)
         case "TM":
-            break
+            TM.backgroundColor = player.color
+            TM.setTitleColor(player.color, for: .normal)
         case "BM":
-            break
+            BM.backgroundColor = player.color
+            BM.setTitleColor(player.color, for: .normal)
         case "TR":
-            break
+            TR.backgroundColor = player.color
+            TR.setTitleColor(player.color, for: .normal)
         case "MR":
-            break
+            MR.backgroundColor = player.color
+            MR.setTitleColor(player.color, for: .normal)
         case "BR":
-            break
+            BR.backgroundColor = player.color
+            BR.setTitleColor(player.color, for: .normal)
         default:
             break
         }
         
     }
     
-    private func makeMove(position: String) {
+    private func makeMove(position: String, player: Player) {
         
         if (count != 6 && count % 2 == 0 && isPositionOpen(position: position)) {
             let piece = Piece(currentPosition: position)
             p1.pieces.append(piece)
-            updateUI(position: position)
+            updateUI(position: position, player: p1)
             count += 1
             return
         }
@@ -243,6 +258,7 @@ class SecondViewController: UIViewController {
         if (count != 6 && count % 2 != 0 && isPositionOpen(position: position)) {
             let piece = Piece(currentPosition: position)
             p2.pieces.append(piece)
+            updateUI(position: position, player: p2)
             count += 1
             return
         }
@@ -250,12 +266,35 @@ class SecondViewController: UIViewController {
         gameArr.append(position)
         
         if (gameArr.count == 2) {
-            print("Jappy")
+            if (isPositionOpen(position: gameArr[1]) && isMoveAllowed(currentPosition: gameArr[0], newPosition: gameArr[1])) {
+                movePiece(player: player)
+            } else {
+                print("That position is not currently open punk")
+            }
         }
-        
-        
-        
     }
+    
+    func movePiece(player: Player) {
+        var count = 0
+        let pieces = player.pieces
+        for piece in pieces {
+            if (piece.currentPosition == gameArr[0]) {
+                piece.move(currentPosition: gameArr[0], newPosition: gameArr[1], player: player, index: count)
+                return
+            }
+            count += 1
+        }
+    }
+    
+    private func isMoveAllowed(currentPosition: String, newPosition: String) -> Bool {
+        let pos = allowedMoves[currentPosition]!
+        if (pos.contains(newPosition)) {
+            return true
+        }
+        return false
+    }
+    
+    
     
     private func isPositionOpen(position: String) -> Bool {
         let combinedArr = p1.pieces + p2.pieces

@@ -9,16 +9,26 @@ import Foundation
 
 class Piece {
     
-    let currentPosition: String
+    var currentPosition: String
     let rules = Rules()
     
     init(currentPosition: String) {
         self.currentPosition = currentPosition
     }
     
-    func move(currentPosition:String, newPosition: String, p1: Player, p2: Player) {
-        let p1Pieces = p1.pieces
-        let p2Pieces = p2.pieces
+    func move(currentPosition:String, newPosition: String, player: Player, index: Int)  {
+        let playerArr = player.pieces
+        playerArr[index].currentPosition = newPosition
+        player.pieces = playerArr
+        
+        if (checkForWin(playerArr: player.pieces)) {
+            print("Player has won")
+        } else {
+            //player2.isturn = true
+            player.isTurn = false
+        }
+        
+        
     }
     
     func checkForWin(playerArr: [Piece]) -> Bool {

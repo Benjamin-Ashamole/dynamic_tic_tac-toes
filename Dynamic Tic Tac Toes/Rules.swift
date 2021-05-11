@@ -28,7 +28,7 @@ struct Rules {
         "MR": ["TR", "MM", "BR"],
         "BL": ["ML", "MM", "BM"],
         "BM": ["BL", "MM", "BR"],
-        "BR": ["MR", "MM", "BMr"]
+        "BR": ["MR", "MM", "BMrio"]
         
     ]
 }

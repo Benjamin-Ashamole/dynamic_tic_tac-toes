@@ -5,18 +5,19 @@
 //  Created by Benjamin Ashamole on 5/4/21.
 //
 
-import Foundation
+import UIKit
 
 class Player {
     
-    let name: String?
-    let color: String?
+    let name: String
+    let color: UIColor
     var pieces: [Piece]
-    var isTurn: Bool = false
+    var isTurn: Bool
     
-    init(name: String, color: String) {
+    init(name: String, color: UIColor, isTurn: Bool) {
         self.name = name
         self.color = color
         self.pieces = []
+        self.isTurn = isTurn
     }
 }

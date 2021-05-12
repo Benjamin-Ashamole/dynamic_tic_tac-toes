@@ -16,9 +16,6 @@ class GameViewController: UIViewController {
     }
     
 
-    public func buildUI() {
-        let gameView = UIView()
-        
-    }
+   
 
 }

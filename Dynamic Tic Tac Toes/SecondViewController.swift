@@ -25,7 +25,7 @@ class SecondViewController: UIViewController {
     var BR: UIButton!
     
     var p1 = Player(name: "Player 1", color: .red, isTurn: true)
-    var p2 = Player(name: "Player 2", color: .yellow, isTurn: false)
+    var p2 = Player(name: "Player 2", color: .purple, isTurn: false)
     
 
     override func viewDidLoad() {
@@ -210,37 +210,69 @@ class SecondViewController: UIViewController {
         }
     }
     
-    private func updateUI(position: String, player: Player) {
-        switch position {
+    private func updateUI(position1: String, position2: String, player: Player) {
+        switch position1 {
         case "TL":
-            TL.backgroundColor = player.color
-            TL.setTitleColor(player.color, for: .normal)
+            uiUpdate(btn: TL, player: player)
         case "BL":
-            BL.backgroundColor = player.color
-            BL.setTitleColor(player.color, for: .normal)
+            uiUpdate(btn: BL, player: player)
         case "ML":
-            ML.backgroundColor = player.color
-            ML.setTitleColor(player.color, for: .normal)
+            uiUpdate(btn: ML, player: player)
         case "MM":
-            MM.backgroundColor = player.color
-            MM.setTitleColor(player.color, for: .normal)
+            uiUpdate(btn: MM, player: player)
         case "TM":
-            TM.backgroundColor = player.color
-            TM.setTitleColor(player.color, for: .normal)
+            uiUpdate(btn: TM, player: player)
         case "BM":
-            BM.backgroundColor = player.color
-            BM.setTitleColor(player.color, for: .normal)
+            uiUpdate(btn: BM, player: player)
         case "TR":
-            TR.backgroundColor = player.color
-            TR.setTitleColor(player.color, for: .normal)
+            uiUpdate(btn: TR, player: player)
         case "MR":
-            MR.backgroundColor = player.color
-            MR.setTitleColor(player.color, for: .normal)
+            print("entered 1")
+            uiUpdate(btn: MR, player: player)
         case "BR":
-            BR.backgroundColor = player.color
-            BR.setTitleColor(player.color, for: .normal)
+            uiUpdate(btn: BR, player: player)
         default:
             break
+        }
+        
+        switch position2 {
+        case "TL":
+            uiUpdate(btn: TL, player: player)
+        case "BL":
+            uiUpdate(btn: BL, player: player)
+        case "ML":
+            uiUpdate(btn: ML, player: player)
+        case "MM":
+            uiUpdate(btn: MM, player: player)
+        case "TM":
+            uiUpdate(btn: TM, player: player)
+        case "BM":
+            uiUpdate(btn: BM, player: player)
+        case "TR":
+            print("entered 2")
+            uiUpdate(btn: TR, player: player)
+        case "MR":
+            uiUpdate(btn: MR, player: player)
+        case "BR":
+            uiUpdate(btn: BR, player: player)
+        default:
+            break
+        }
+        
+    }
+    
+    private func uiUpdate(btn: UIButton, player: Player) {
+        
+        DispatchQueue.main.async {
+            if (btn.backgroundColor != .black) {
+                print("pol")
+                btn.backgroundColor = .black
+                btn.setTitleColor(.black, for: .normal)
+            } else {
+                btn.backgroundColor = player.color
+                btn.setTitleColor(player.color, for: .normal)
+            }
+            
         }
         
     }
@@ -250,7 +282,7 @@ class SecondViewController: UIViewController {
         if (count != 6 && count % 2 == 0 && isPositionOpen(position: position)) {
             let piece = Piece(currentPosition: position)
             p1.pieces.append(piece)
-            updateUI(position: position, player: p1)
+            updateUI(position1: position, position2: "", player: p1)
             count += 1
             return
         }
@@ -258,14 +290,16 @@ class SecondViewController: UIViewController {
         if (count != 6 && count % 2 != 0 && isPositionOpen(position: position)) {
             let piece = Piece(currentPosition: position)
             p2.pieces.append(piece)
-            updateUI(position: position, player: p2)
+            updateUI(position1: position, position2: "", player: p2)
             count += 1
             return
         }
         
         gameArr.append(position)
         
+        
         if (gameArr.count == 2) {
+            print(gameArr!)
             if (isPositionOpen(position: gameArr[1]) && isMoveAllowed(currentPosition: gameArr[0], newPosition: gameArr[1])) {
                 movePiece(player: player)
             } else {
@@ -279,7 +313,12 @@ class SecondViewController: UIViewController {
         let pieces = player.pieces
         for piece in pieces {
             if (piece.currentPosition == gameArr[0]) {
-                piece.move(currentPosition: gameArr[0], newPosition: gameArr[1], player: player, index: count)
+                let result = piece.move(currentPosition: gameArr[0], newPosition: gameArr[1], p1: p1, p2: p2, index: count)
+                updateUI(position1: gameArr[0], position2: gameArr[1], player: player)
+                if (result) {
+                    print("Game Won")
+                }
+                gameArr = []
                 return
             }
             count += 1

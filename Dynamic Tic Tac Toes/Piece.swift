@@ -16,19 +16,29 @@ class Piece {
         self.currentPosition = currentPosition
     }
     
-    func move(currentPosition:String, newPosition: String, player: Player, index: Int)  {
-        let playerArr = player.pieces
-        playerArr[index].currentPosition = newPosition
-        player.pieces = playerArr
+    func move(currentPosition:String, newPosition: String, p1: Player, p2: Player, index: Int) -> Bool {
         
-        if (checkForWin(playerArr: player.pieces)) {
-            print("Player has won")
+        var playerArr: [Piece] = []
+        
+        if (p1.isTurn) {
+            playerArr = p1.pieces
+            playerArr[index].currentPosition = newPosition
+            p1.pieces = playerArr
         } else {
-            //player2.isturn = true
-            player.isTurn = false
+            playerArr = p2.pieces
+            playerArr[index].currentPosition = newPosition
+            p2.pieces = playerArr
         }
         
+        p1.isTurn = !p1.isTurn
+        p2.isTurn = !p2.isTurn
         
+        if (checkForWin(playerArr: playerArr)) {
+            print("Player has won the game.")
+            return true
+        }
+        
+        return false
     }
     
     func checkForWin(playerArr: [Piece]) -> Bool {

@@ -45,8 +45,9 @@ class ViewWithDiagonalLine: UIView {
 
         //super.init(frame: CGRectZero)
         super.init(frame: CGRect())
-
+        layer.zPosition = 0
         //clipsToBounds = true // Cut off everything outside the view
+        
 
         // Add and layout the line view
 
@@ -99,23 +100,20 @@ class ViewWithDiagonalLine: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-
-        // Update length constraint and rotation angle
+        
         lengthConstraint1.constant = sqrt(pow(frame.size.width, 2) + pow(frame.size.height, 2))
-        line1.transform = CGAffineTransform(rotationAngle: atan2(frame.size.height-413.0, frame.size.width-413.0))
+        line1.transform = CGAffineTransform(rotationAngle: -atan2(frame.size.height, frame.size.width))
         
         lengthConstraint2.constant = sqrt(pow(frame.size.width, 2) + pow(frame.size.height, 2))
-
         line2.transform = CGAffineTransform(rotationAngle: atan2(frame.size.height, frame.size.width))
         
-        lengthConstraint3.constant = sqrt(pow(frame.size.width, 2) + pow(frame.size.height, 2))
+        lengthConstraint3.constant = sqrt(pow(frame.size.width, 2) + pow(frame.size.height, 2)) + 55
         line3.transform = CGAffineTransform(rotationAngle: atan2(frame.size.height-335, frame.size.width-335))
         line3.transform = CGAffineTransform(scaleX: CGFloat(0.5), y: CGFloat(1.0))
         
-        lengthConstraint4.constant = sqrt(pow(frame.size.width, 2) + pow(frame.size.height, 2)) - 100.0
-        line4.transform = CGAffineTransform(rotationAngle: atan2(frame.size.height-335, frame.size.width-335))
-        //line4.transform = CGAffineTransform(rotationAngle: atan2(frame.size.height - 544, frame.size.width - 544))
-        //line4.transform = CGAffineTransform(scaleX: CGFloat(100.0), y: CGFloat(1.0))
+        lengthConstraint4.constant = sqrt(pow(frame.size.width, 2) + pow(frame.size.height, 2)) - 79
+        line4.transform = CGAffineTransform(rotationAngle: atan2(frame.size.height, 0))
+        
     }
     
     

@@ -12,12 +12,13 @@
 		2341181726408236004CF835 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2341181526408236004CF835 /* Main.storyboard */; };
 		2341181926408238004CF835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2341181826408238004CF835 /* Assets.xcassets */; };
 		2341181C26408238004CF835 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2341181A26408238004CF835 /* LaunchScreen.storyboard */; };
-		2341182426408385004CF835 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341182326408385004CF835 /* GameViewController.swift */; };
 		234118262640E06B004CF835 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234118252640E06B004CF835 /* SecondViewController.swift */; };
 		234118282640F3BF004CF835 /* Lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234118272640F3BF004CF835 /* Lines.swift */; };
 		2341182A2641054A004CF835 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234118292641054A004CF835 /* Player.swift */; };
 		2341182C2641058D004CF835 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341182B2641058D004CF835 /* Piece.swift */; };
 		2341182E26410B2C004CF835 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341182D26410B2C004CF835 /* Rules.swift */; };
+		23D0CF2B2654CDEF00C51724 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0CF2A2654CDEF00C51724 /* AlertManager.swift */; };
+		23D0CF2D265D799D00C51724 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0CF2C265D799D00C51724 /* PDFViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +29,13 @@
 		2341181826408238004CF835 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2341181B26408238004CF835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2341181D26408238004CF835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2341182326408385004CF835 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		234118252640E06B004CF835 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		234118272640F3BF004CF835 /* Lines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lines.swift; sourceTree = "<group>"; };
 		234118292641054A004CF835 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		2341182B2641058D004CF835 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 		2341182D26410B2C004CF835 /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
+		23D0CF2A2654CDEF00C51724 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		23D0CF2C265D799D00C51724 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +74,13 @@
 				2341181826408238004CF835 /* Assets.xcassets */,
 				2341181A26408238004CF835 /* LaunchScreen.storyboard */,
 				2341181D26408238004CF835 /* Info.plist */,
-				2341182326408385004CF835 /* GameViewController.swift */,
 				234118252640E06B004CF835 /* SecondViewController.swift */,
 				234118272640F3BF004CF835 /* Lines.swift */,
 				234118292641054A004CF835 /* Player.swift */,
 				2341182B2641058D004CF835 /* Piece.swift */,
 				2341182D26410B2C004CF835 /* Rules.swift */,
+				23D0CF2A2654CDEF00C51724 /* AlertManager.swift */,
+				23D0CF2C265D799D00C51724 /* PDFViewController.swift */,
 			);
 			path = "Dynamic Tic Tac Toes";
 			sourceTree = "<group>";
@@ -152,12 +155,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23D0CF2D265D799D00C51724 /* PDFViewController.swift in Sources */,
+				23D0CF2B2654CDEF00C51724 /* AlertManager.swift in Sources */,
 				234118262640E06B004CF835 /* SecondViewController.swift in Sources */,
 				2341182E26410B2C004CF835 /* Rules.swift in Sources */,
 				2341182C2641058D004CF835 /* Piece.swift in Sources */,
 				234118282640F3BF004CF835 /* Lines.swift in Sources */,
 				2341181026408236004CF835 /* AppDelegate.swift in Sources */,
-				2341182426408385004CF835 /* GameViewController.swift in Sources */,
 				2341182A2641054A004CF835 /* Player.swift in Sources */,
 				2341181226408236004CF835 /* SceneDelegate.swift in Sources */,
 			);
@@ -307,7 +311,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9G586NACAB;
 				INFOPLIST_FILE = "Dynamic Tic Tac Toes/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,7 +331,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9G586NACAB;
 				INFOPLIST_FILE = "Dynamic Tic Tac Toes/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

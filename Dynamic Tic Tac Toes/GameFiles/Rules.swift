@@ -8,7 +8,7 @@
 import Foundation
 
 struct Rules {
-    let winningCombos: [[String]] = [
+    static let winningCombos: [[String]] = [
         ["TL", "TM", "TR"],
         ["ML", "MM", "MR"],
         ["BL", "BM", "BR"],
@@ -19,7 +19,7 @@ struct Rules {
         ["TR", "MM", "BL"],
     ]
     
-    let allowedMoves: [String: Array<String>] = [
+    static let allowedMoves: [String: Array<String>] = [
         "TL": ["TM", "MM", "ML"],
         "TM": ["TL", "MM", "TR"],
         "TR": ["TM", "MM", "MR"],
@@ -29,6 +29,5 @@ struct Rules {
         "BL": ["ML", "MM", "BM"],
         "BM": ["BL", "MM", "BR"],
         "BR": ["MR", "MM", "BMrio"]
-        
     ]
 }

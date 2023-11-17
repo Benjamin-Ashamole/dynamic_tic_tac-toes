@@ -9,12 +9,14 @@ import UIKit
 
 class Player {
     
-    let name: String
-    let color: UIColor
+    var name: String
+    var color: UIColor
     var pieces: [Piece]
     var isTurn: Bool
     
-    init(name: String, color: UIColor, isTurn: Bool) {
+    var movePosition: (current: String?, next: String?)
+    
+    init(name: String = "", color: UIColor = .clear, isTurn: Bool = false) {
         self.name = name
         self.color = color
         self.pieces = []

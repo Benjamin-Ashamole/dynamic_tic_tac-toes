@@ -30,7 +30,9 @@ class AlertManager: NSObject {
     
     private var myTargetView: UIView?
     
-    func showAlert(with title: String, message: String, on viewController: UIViewController) {
+    func showAlert(with title: String, 
+                   message: String,
+                   on viewController: UIViewController) {
         guard let targetView = viewController.view else { return }
         
         myTargetView = targetView
@@ -54,7 +56,7 @@ class AlertManager: NSObject {
        
         let button = UIButton(frame: CGRect(x: 0, y: alertView.frame.size.height - 50, width: alertView.frame.size.width, height: 50))
         button.setTitle("Dismiss", for: .normal)
-        button.setTitleColor(UIColor(named: "AppGree2"), for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
         
         alertView.addSubview(button)
@@ -83,6 +85,8 @@ class AlertManager: NSObject {
                     if done {
                         self.alertView.removeFromSuperview()
                         self.backgroundView.removeFromSuperview()
+                        NotificationCenter
+                            .default.post(Notification(name: Notification.Name("reset")))
                     }
                 })
             }

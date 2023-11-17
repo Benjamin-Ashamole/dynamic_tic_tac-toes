@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2309CD862B05487100258A71 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2309CD852B05487100258A71 /* HomeViewController.swift */; };
+		2309CD882B05488600258A71 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2309CD872B05488600258A71 /* HomeView.swift */; };
+		2309CD8A2B054B3400258A71 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2309CD892B054B3400258A71 /* PlayerView.swift */; };
+		2309CD932B0579B800258A71 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2309CD922B0579B800258A71 /* Coordinator.swift */; };
+		230DCC572AFC9BF80017FD7D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230DCC562AFC9BF80017FD7D /* GameViewController.swift */; };
+		230DCC592AFDCF0F0017FD7D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230DCC582AFDCF0F0017FD7D /* Game.swift */; };
 		2341181026408236004CF835 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341180F26408236004CF835 /* AppDelegate.swift */; };
 		2341181226408236004CF835 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341181126408236004CF835 /* SceneDelegate.swift */; };
-		2341181726408236004CF835 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2341181526408236004CF835 /* Main.storyboard */; };
 		2341181926408238004CF835 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2341181826408238004CF835 /* Assets.xcassets */; };
 		2341181C26408238004CF835 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2341181A26408238004CF835 /* LaunchScreen.storyboard */; };
-		234118262640E06B004CF835 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234118252640E06B004CF835 /* SecondViewController.swift */; };
 		234118282640F3BF004CF835 /* Lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234118272640F3BF004CF835 /* Lines.swift */; };
 		2341182A2641054A004CF835 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234118292641054A004CF835 /* Player.swift */; };
 		2341182C2641058D004CF835 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341182B2641058D004CF835 /* Piece.swift */; };
@@ -21,15 +25,32 @@
 		23D0CF2D265D799D00C51724 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0CF2C265D799D00C51724 /* PDFViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2328DC8C2AF499A5005BF26A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2309CD852B05487100258A71 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2309CD872B05488600258A71 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2309CD892B054B3400258A71 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		2309CD922B0579B800258A71 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		230DCC562AFC9BF80017FD7D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		230DCC582AFDCF0F0017FD7D /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		2341180C26408236004CF835 /* Dynamic Tic Tac Toes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dynamic Tic Tac Toes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2341180F26408236004CF835 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2341181126408236004CF835 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2341181626408236004CF835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2341181826408238004CF835 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2341181B26408238004CF835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2341181D26408238004CF835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		234118252640E06B004CF835 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		234118272640F3BF004CF835 /* Lines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lines.swift; sourceTree = "<group>"; };
 		234118292641054A004CF835 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		2341182B2641058D004CF835 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
@@ -49,6 +70,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2309CD8B2B0578F200258A71 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2309CD872B05488600258A71 /* HomeView.swift */,
+				234118272640F3BF004CF835 /* Lines.swift */,
+				2309CD892B054B3400258A71 /* PlayerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2309CD8C2B05790D00258A71 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				230DCC562AFC9BF80017FD7D /* GameViewController.swift */,
+				2309CD852B05487100258A71 /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2309CD8D2B05794900258A71 /* GameFiles */ = {
+			isa = PBXGroup;
+			children = (
+				230DCC582AFDCF0F0017FD7D /* Game.swift */,
+				2341182B2641058D004CF835 /* Piece.swift */,
+				234118292641054A004CF835 /* Player.swift */,
+				2341182D26410B2C004CF835 /* Rules.swift */,
+			);
+			path = GameFiles;
+			sourceTree = "<group>";
+		};
+		2309CD8E2B05796F00258A71 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				23D0CF2A2654CDEF00C51724 /* AlertManager.swift */,
+				23D0CF2C265D799D00C51724 /* PDFViewController.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		2309CD912B0579A000258A71 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				2309CD922B0579B800258A71 /* Coordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		2341180326408236004CF835 = {
 			isa = PBXGroup;
 			children = (
@@ -68,19 +136,16 @@
 		2341180E26408236004CF835 /* Dynamic Tic Tac Toes */ = {
 			isa = PBXGroup;
 			children = (
+				2309CD912B0579A000258A71 /* Coordinators */,
+				2309CD8E2B05796F00258A71 /* Misc */,
+				2309CD8D2B05794900258A71 /* GameFiles */,
+				2309CD8C2B05790D00258A71 /* ViewControllers */,
+				2309CD8B2B0578F200258A71 /* Views */,
 				2341180F26408236004CF835 /* AppDelegate.swift */,
 				2341181126408236004CF835 /* SceneDelegate.swift */,
-				2341181526408236004CF835 /* Main.storyboard */,
 				2341181826408238004CF835 /* Assets.xcassets */,
 				2341181A26408238004CF835 /* LaunchScreen.storyboard */,
 				2341181D26408238004CF835 /* Info.plist */,
-				234118252640E06B004CF835 /* SecondViewController.swift */,
-				234118272640F3BF004CF835 /* Lines.swift */,
-				234118292641054A004CF835 /* Player.swift */,
-				2341182B2641058D004CF835 /* Piece.swift */,
-				2341182D26410B2C004CF835 /* Rules.swift */,
-				23D0CF2A2654CDEF00C51724 /* AlertManager.swift */,
-				23D0CF2C265D799D00C51724 /* PDFViewController.swift */,
 			);
 			path = "Dynamic Tic Tac Toes";
 			sourceTree = "<group>";
@@ -95,6 +160,7 @@
 				2341180826408236004CF835 /* Sources */,
 				2341180926408236004CF835 /* Frameworks */,
 				2341180A26408236004CF835 /* Resources */,
+				2328DC8C2AF499A5005BF26A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -111,7 +177,7 @@
 		2341180426408236004CF835 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					2341180B26408236004CF835 = {
@@ -144,7 +210,6 @@
 			files = (
 				2341181C26408238004CF835 /* LaunchScreen.storyboard in Resources */,
 				2341181926408238004CF835 /* Assets.xcassets in Resources */,
-				2341181726408236004CF835 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,29 +220,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				230DCC572AFC9BF80017FD7D /* GameViewController.swift in Sources */,
 				23D0CF2D265D799D00C51724 /* PDFViewController.swift in Sources */,
+				2309CD932B0579B800258A71 /* Coordinator.swift in Sources */,
+				2309CD882B05488600258A71 /* HomeView.swift in Sources */,
 				23D0CF2B2654CDEF00C51724 /* AlertManager.swift in Sources */,
-				234118262640E06B004CF835 /* SecondViewController.swift in Sources */,
 				2341182E26410B2C004CF835 /* Rules.swift in Sources */,
 				2341182C2641058D004CF835 /* Piece.swift in Sources */,
+				230DCC592AFDCF0F0017FD7D /* Game.swift in Sources */,
 				234118282640F3BF004CF835 /* Lines.swift in Sources */,
+				2309CD8A2B054B3400258A71 /* PlayerView.swift in Sources */,
 				2341181026408236004CF835 /* AppDelegate.swift in Sources */,
 				2341182A2641054A004CF835 /* Player.swift in Sources */,
 				2341181226408236004CF835 /* SceneDelegate.swift in Sources */,
+				2309CD862B05487100258A71 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2341181526408236004CF835 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2341181626408236004CF835 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2341181A26408238004CF835 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

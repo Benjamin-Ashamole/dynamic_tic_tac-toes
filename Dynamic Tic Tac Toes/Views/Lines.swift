@@ -24,8 +24,7 @@ class ViewWithDiagonalLine: UIView {
 
     init() {
         // initialize gameview
-        
-        
+    
         // Initialize line view
         line1 = UIView()
         line1.translatesAutoresizingMaskIntoConstraints = false
@@ -107,7 +106,7 @@ class ViewWithDiagonalLine: UIView {
         lengthConstraint2.constant = sqrt(pow(frame.size.width, 2) + pow(frame.size.height, 2))
         line2.transform = CGAffineTransform(rotationAngle: atan2(frame.size.height, frame.size.width))
         
-        lengthConstraint3.constant = sqrt(pow(frame.size.width, 2) + pow(frame.size.height, 2)) + 55
+        lengthConstraint3.constant = sqrt(pow(frame.size.width, 2) + pow(frame.size.height, 2)) - 100
         line3.transform = CGAffineTransform(rotationAngle: atan2(frame.size.height-335, frame.size.width-335))
         line3.transform = CGAffineTransform(scaleX: CGFloat(0.5), y: CGFloat(1.0))
         
